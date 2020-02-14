@@ -1,0 +1,34 @@
+tgt_organisations:
+    resource: "@TGTBundle/Controller/OrganisationsController.php"
+    type:     annotation
+
+tgt_events:
+    resource: "@TGTBundle/Controller/EventsController.php"
+    type:     annotation
+
+tgt_casting:
+    resource: "@TGTBundle/Controller/CastingController.php"
+    type:     annotation
+
+tgt_organisations:
+    resource: "@TGTBundle/Controller/OrganisationsController.php"
+    type:     annotation
+
+tgt:
+    resource: "@TGTBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+

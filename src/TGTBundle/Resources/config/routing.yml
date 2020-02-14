@@ -1,0 +1,57 @@
+tgt_homepage:
+    path:     /
+    defaults: { _controller: TGTBundle:Default:index }
+
+#Organisation
+Organisations_new:
+    path: /addOrganisations
+    defaults: { _controller: TGTBundle:Organisations:new }
+
+Organisations_show:
+    path: /showOrganisations
+    defaults: { _controller: TGTBundle:Organisations:index }
+
+Organisations_edit:
+  path: /editOrganisations/{id}/
+  defaults: { _controller: TGTBundle:Organisations:edit }
+
+Organisations_delete:
+  path: /deleteOrganisations/{id}/
+  defaults: { _controller: TGTBundle:Organisations:delete }
+
+
+#Casting
+Casting_add:
+    path: /addCasting
+    defaults: { _controller: TGTBundle:Casting:new }
+
+Casting_show:
+    path: /showCasting
+    defaults: { _controller: TGTBundle:Casting:index }
+
+Casting_edit:
+  path: /editCasting/{id}/
+  defaults: { _controller: TGTBundle:Casting:edit }
+
+Casting_delete:
+  path: /deleteCasting/{id}/
+  defaults: { _controller: TGTBundle:Casting:delete }
+
+
+
+#Events
+Events_add:
+    path: /addEvents
+    defaults: { _controller: TGTBundle:Events:new }
+
+Events_show:
+  path: /showEvents
+  defaults: { _controller: TGTBundle:Events:index }
+
+Events_edit:
+  path: /editEvents/{id}/
+  defaults: { _controller: TGTBundle:Events:edit }
+
+Events_delete:
+  path: /deleteEvents/{id}/
+  defaults: { _controller: TGTBundle:Events:delete }

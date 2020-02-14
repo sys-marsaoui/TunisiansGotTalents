@@ -1,0 +1,21 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div style="text-align: center;">
+    <h1>Ajouter Organisation</h1><br><br>
+    <div class="align-self-center ">
+
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ form_widget(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+
+
