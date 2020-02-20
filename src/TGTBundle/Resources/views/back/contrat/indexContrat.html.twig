@@ -1,0 +1,29 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+    <a href="{{ path('back_AddContrat') }}" >+++ajouter un contrat +++</a>
+
+    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+        <thead>
+        <tr>
+            <th data-field="Nomc" data-editable="true">Salaire</th>
+            <th data-field="Cincondidat" data-editable="true">Typecontrat</th>
+            <th data-field="naCvme" data-editable="true">Dureecontart</th>
+            <th data-field="Motivation" data-editable="true">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contrat in contrat %}
+            <tr>
+                <td>{{ contrat.salaire }}</td>
+                <td>{{ contrat.typeContrat }}</td>
+                <td>{{ contrat.dureeContart }}</td>
+                <td><a href="{{ path('back_EditContrat',{'id':contrat.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                    <a href="{{ path('back_DeleteContrat',{'id':contrat.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}" width="30" height="30"></a></td>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+
+

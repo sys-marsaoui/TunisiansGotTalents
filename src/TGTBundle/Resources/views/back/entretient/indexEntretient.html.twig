@@ -1,0 +1,32 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+    <a href="{{ path('back_AddEntretient') }}" >+++ajouter un entretient +++</a>
+
+
+    <h1>Entretiens list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Dateent</th>
+            <th>Statutent</th>
+            <th>Noteent</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entretien in entretient %}
+            <tr>
+                <td>{% if entretien.dateEnt %}{{ entretien.dateEnt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entretien.statutEnt }}</td>
+                <td>{{ entretien.noteEnt }}</td>
+                <td><a href="{{ path('back_EditEntretient',{'id':entretien.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                    <a href="{{ path('back_DeleteEntretient',{'id':entretien.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}" width="30" height="30"></a></td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

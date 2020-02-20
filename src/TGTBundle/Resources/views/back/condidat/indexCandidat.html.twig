@@ -1,0 +1,49 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+    <a href="{{ path('back_AddCandidat') }}" >+++ajouter un condidat +++</a>
+    <div id="toolbar">
+        <select class="form-control">
+            <option value="">Export Basic</option>
+            <option value="all">Export All</option>
+            <option value="selected">Export Selected</option>
+        </select>
+
+        <select class="form-control">
+            <option >les contrat</option>
+            <option >les candidat</option>
+            <option >les entretient </option>
+        </select>
+    </div>
+    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+        <thead>
+        <tr>
+            <th data-field="Nomc" data-editable="true">Nomc</th>
+            <th data-field="Cincondidat" data-editable="true">Cincondidat</th>
+            <th data-field="naCvme" data-editable="true">Cv</th>
+            <th data-field="Motivation" data-editable="true">Motivation</th>
+            <th data-field="Mailaddress" data-editable="true">Mail address</th>
+            <th data-field="Tel" data-editable="true">Tel</th>
+            <th data-field="Actions" data-editable="true">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for candidat in candidat %}
+            <tr>
+                <td>{{ candidat.nomC }}</td>
+                <td>{{ candidat.cinCondidat }}</td>
+                <td>{{ candidat.cv }}</td>
+                <td>{{ candidat.motivation }}</td>
+                <td>{{ candidat.mailaddress }}</td>
+                <td>{{ candidat.tel }}</td>
+                <td><a href="{{ path('back_EditCandidat',{'id':candidat.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                    <a href="{{ path('back_DeleteCandidat',{'id':candidat.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}" width="30" height="30"></a></td>
+            </tr>
+                {% endfor %}
+        </tbody>
+
+    </table>
+
+
+{% endblock %}
+
+

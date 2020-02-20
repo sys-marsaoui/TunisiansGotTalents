@@ -244,7 +244,7 @@ class Casting
 
     public function __toString()
     {
-        return $this->getTitreCasting();
+        return $this->getTitreCasting();// TODO: Implement __toString() method.
     }
 
 }
