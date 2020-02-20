@@ -1,57 +1,161 @@
 tgt_homepage:
     path:     /
     defaults: { _controller: TGTBundle:Default:index }
+#Candidat
+candidat_new:
+    path:     /newCandidat
+    defaults: { _controller: TGTBundle:Candidat:new }
 
-#Organisation
-Organisations_new:
-    path: /addOrganisations
-    defaults: { _controller: TGTBundle:Organisations:new }
+candidat_show:
+    path:     /showCandidat
+    defaults: { _controller: TGTBundle:Candidat:index }
 
-Organisations_show:
-    path: /showOrganisations
-    defaults: { _controller: TGTBundle:Organisations:index }
+candidat_edit:
+    path:     /editCandidat/{id}/
+    defaults: { _controller: TGTBundle:Candidat:edit }
 
-Organisations_edit:
-  path: /editOrganisations/{id}/
-  defaults: { _controller: TGTBundle:Organisations:edit }
+candidat_delete:
+    path:     /deleteCandidat/{id}/
+    defaults: { _controller: TGTBundle:Candidat:delete }
+#Contrat
+contrat_new:
+    path:     /newContrat
+    defaults: { _controller: TGTBundle:Contrat:new }
 
-Organisations_delete:
-  path: /deleteOrganisations/{id}/
-  defaults: { _controller: TGTBundle:Organisations:delete }
+contrat_show:
+    path:     /showContrat
+    defaults: { _controller: TGTBundle:Contrat:index }
+
+contrat_edit:
+    path:     /editContrat/{id}/
+    defaults: { _controller: TGTBundle:Contrat:edit }
+
+contrat_delete:
+    path:     /deleteContrat/{id}/
+    defaults: { _controller: TGTBundle:Contrat:delete }
+#Entretien
+entretien_new:
+    path:     /newEntretien
+    defaults: { _controller: TGTBundle:Entretien:new }
+
+entretien_show:
+    path:     /showEntretien
+    defaults: { _controller: TGTBundle:Entretien:index }
+
+entretien_edit:
+    path:     /editEntretien/{id}/
+    defaults: { _controller: TGTBundle:Entretien:edit }
+
+entretien_delete:
+    path:     /deleteEntretien/{id}/
+    defaults: { _controller: TGTBundle:Entretien:delete }
+
+#backUtilisateur
+back_Utilisateur:
+    path:     /admin/backUtilisateur
+    defaults: { _controller: TGTBundle:Back:indexUtilisateur }
+
+back_AddUtilisateur:
+    path:     /admin/AddUtilisateur
+    defaults: { _controller: TGTBundle:Back:addUtilisateur }
+
+back_EditUtilisateur:
+    path:     /admin/EditUtilisateur
+    defaults: { _controller: TGTBundle:Back:editUtilisateur }
+
+#BackOrganisation
+back_Organiation:
+    path:     /admin/backOrganisation
+    defaults: { _controller: TGTBundle:Back:indexOrganisation }
 
 
-#Casting
-Casting_add:
-    path: /addCasting
-    defaults: { _controller: TGTBundle:Casting:new }
-
-Casting_show:
-    path: /showCasting
-    defaults: { _controller: TGTBundle:Casting:index }
-
-Casting_edit:
-  path: /editCasting/{id}/
-  defaults: { _controller: TGTBundle:Casting:edit }
-
-Casting_delete:
-  path: /deleteCasting/{id}/
-  defaults: { _controller: TGTBundle:Casting:delete }
+back_AddOrganiation:
+    path:     /admin/addOrganisation
+    defaults: { _controller: TGTBundle:Back:addOrganisation }
 
 
+back_EditOrganiation:
+    path:     /admin/editOrganisation/{id}
+    defaults: { _controller: TGTBundle:Back:editOrganisation }
 
-#Events
-Events_add:
-    path: /addEvents
-    defaults: { _controller: TGTBundle:Events:new }
 
-Events_show:
-  path: /showEvents
-  defaults: { _controller: TGTBundle:Events:index }
+back_DeleteOrganiation:
+    path:     /admin/deleteOrganisation/{id}
+    defaults: { _controller: TGTBundle:Back:deleteOrganisation }
 
-Events_edit:
-  path: /editEvents/{id}/
-  defaults: { _controller: TGTBundle:Events:edit }
+#BackEntretient
+back_Entretient:
+    path:     /admin/backEntretient
+    defaults: { _controller: TGTBundle:Back:indexEntretient }
 
-Events_delete:
-  path: /deleteEvents/{id}/
-  defaults: { _controller: TGTBundle:Events:delete }
+back_AddEntretient:
+    path:     /admin/addEntretient
+    defaults: { _controller: TGTBundle:Back:addEntretient }
+
+
+back_EditEntretient:
+    path:     /admin/editEntretient/{id}
+    defaults: { _controller: TGTBundle:Back:editEntretient }
+
+
+back_DeleteEntretient:
+    path:     /admin/deleteEntretient/{id}
+    defaults: { _controller: TGTBundle:Back:deleteEntretient }
+
+#BackContrat
+back_Contrat:
+    path:     /admin/backContrat
+    defaults: { _controller: TGTBundle:Back:indexContrat }
+
+back_AddContrat:
+    path:     /admin/addContrat
+    defaults: { _controller: TGTBundle:Back:addContrat }
+
+
+back_EditContrat:
+    path:     /admin/editContrat/{id}
+    defaults: { _controller: TGTBundle:Back:editContrat }
+
+
+back_DeleteContrat:
+    path:     /admin/deleteContrat/{id}
+    defaults: { _controller: TGTBundle:Back:deleteContrat }
+
+#BackCandidat
+back_Candidat:
+    path:     /admin/backCandidat
+    defaults: { _controller: TGTBundle:Back:indexCandidat }
+
+back_AddCandidat:
+    path:     /admin/addCandidat
+    defaults: { _controller: TGTBundle:Back:addCandidat }
+
+
+back_EditCandidat:
+    path:     /admin/editCandidat/{id}
+    defaults: { _controller: TGTBundle:Back:editCandidat }
+
+
+back_DeleteCandidat:
+    path:     /admin/deleteCandidat/{id}
+    defaults: { _controller: TGTBundle:Back:deleteCandidat }
+
+#BackFormation
+back_Formation:
+    path:     /admin/backFormation
+    defaults: { _controller: TGTBundle:Back:indexFormation }
+
+#BackVente
+back_Vente:
+    path:     /admin/backVente
+    defaults: { _controller: TGTBundle:Back:indexVente }
+
+#BackPublication
+back_Publication:
+    path:     /admin/backPublication
+    defaults: { _controller: TGTBundle:Back:indexPublication }
+
+#BackForum
+back_Forum:
+    path:     /admin/backForum
+    defaults: { _controller: TGTBundle:Back:indexForum }

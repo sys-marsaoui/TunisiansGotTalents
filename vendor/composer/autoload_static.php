@@ -4,16 +4,16 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
+class ComposerStaticInit346171b31684e2c2591e6b67ad3c2d25
 {
     public static $files = array (
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '32dcc8afd4335739640db7d200c1971d' => __DIR__ . '/..' . '/symfony/polyfill-apcu/bootstrap.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '719971e375036615a0685b6fb054583d' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php',
@@ -22,8 +22,8 @@ class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
-            'Twig\\Extensions\\' => 16,
             'Twig\\' => 5,
+            'Toiba\\FullCalendarBundle\\' => 25,
             'Tests\\' => 6,
         ),
         'S' => 
@@ -60,10 +60,6 @@ class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
         array (
             'Monolog\\' => 8,
         ),
-        'J' => 
-        array (
-            'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => 37,
-        ),
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
@@ -72,10 +68,6 @@ class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
         array (
             'Fig\\Link\\' => 9,
             'FOS\\UserBundle\\' => 15,
-        ),
-        'E' => 
-        array (
-            'EasyCorp\\Bundle\\EasyAdminBundle\\' => 32,
         ),
         'D' => 
         array (
@@ -94,13 +86,13 @@ class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
     );
 
     public static $prefixDirsPsr4 = array (
-        'Twig\\Extensions\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/twig/extensions/src',
-        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Toiba\\FullCalendarBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/toiba/fullcalendar-bundle',
         ),
         'Tests\\' => 
         array (
@@ -206,10 +198,6 @@ class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/easycorp/easyadmin-bundle/legacy',
-        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
@@ -221,10 +209,6 @@ class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
         'FOS\\UserBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
-        ),
-        'EasyCorp\\Bundle\\EasyAdminBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/easycorp/easyadmin-bundle/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -267,20 +251,9 @@ class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
     public static $prefixesPsr0 = array (
         'T' => 
         array (
-            'Twig_Extensions_' => 
-            array (
-                0 => __DIR__ . '/..' . '/twig/extensions/lib',
-            ),
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
-            ),
-        ),
-        'P' => 
-        array (
-            'Pagerfanta\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/pagerfanta/pagerfanta/src',
             ),
         ),
         'D' => 
@@ -324,11 +297,11 @@ class ComposerStaticInit86859f91087393ba17b54134ea34b0b1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit86859f91087393ba17b54134ea34b0b1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit86859f91087393ba17b54134ea34b0b1::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit86859f91087393ba17b54134ea34b0b1::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit86859f91087393ba17b54134ea34b0b1::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit86859f91087393ba17b54134ea34b0b1::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit346171b31684e2c2591e6b67ad3c2d25::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit346171b31684e2c2591e6b67ad3c2d25::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit346171b31684e2c2591e6b67ad3c2d25::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit346171b31684e2c2591e6b67ad3c2d25::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit346171b31684e2c2591e6b67ad3c2d25::$classMap;
 
         }, null, ClassLoader::class);
     }
