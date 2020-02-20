@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Candidats list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomc</th>
+                <th>Cincondidat</th>
+                <th>Cv</th>
+                <th>Motivation</th>
+                <th>Mailaddress</th>
+                <th>Tel</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for candidat in candidats %}
+            <tr>
+                <td><a href="{{ path('candidat_show', { 'id': candidat.id }) }}">{{ candidat.id }}</a></td>
+                <td>{{ candidat.nomC }}</td>
+                <td>{{ candidat.cinCondidat }}</td>
+                <td>{{ candidat.cv }}</td>
+                <td>{{ candidat.motivation }}</td>
+                <td>{{ candidat.mailaddress }}</td>
+                <td>{{ candidat.tel }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('candidat_show', { 'id': candidat.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('candidat_edit', { 'id': candidat.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('candidat_new') }}">Create a new candidat</a>
+        </li>
+    </ul>
+{% endblock %}

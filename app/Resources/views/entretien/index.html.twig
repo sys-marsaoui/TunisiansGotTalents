@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Entretiens list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dateent</th>
+                <th>Statutent</th>
+                <th>Noteent</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entretien in entretiens %}
+            <tr>
+                <td><a href="{{ path('entretien_show', { 'id': entretien.id }) }}">{{ entretien.id }}</a></td>
+                <td>{% if entretien.dateEnt %}{{ entretien.dateEnt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entretien.statutEnt }}</td>
+                <td>{{ entretien.noteEnt }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('entretien_show', { 'id': entretien.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('entretien_edit', { 'id': entretien.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('entretien_new') }}">Create a new entretien</a>
+        </li>
+    </ul>
+{% endblock %}

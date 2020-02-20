@@ -220,7 +220,7 @@ class Organisations
 
     public function __toString()
     {
-        return $this->getNomOrganisation();
+        return $this->getNomOrganisation();// TODO: Implement __toString() method.
     }
 
 }

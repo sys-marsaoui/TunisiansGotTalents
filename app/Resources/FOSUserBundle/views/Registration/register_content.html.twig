@@ -1,21 +1,38 @@
 {% trans_default_domain 'FOSUserBundle' %}
-<div style="text-align: center;">
-    <h1>Ajouter Organisation</h1><br><br>
-    <div class="align-self-center ">
 
-        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                {{ form_widget(form) }}
-            </div>
+    <h1>Inscription</h1><br><br>
+
+
+
+<div class="align-self-center ">
+
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{ form_label(form.name, 'name', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+            {{ form_widget(form.name, {'attr': {'class' : 'form-control'}}) }}
+        </div>
+
+        <div class="form-group col-md-6">
+            {{ form_label(form.email, 'email', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+            {{ form_widget(form.email, {'attr': {'class' : 'form-control'}}) }}
+        </div>
+
+        <div class="form-group col-md-6">
+            {{ form_label(form.username, 'username', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+            {{ form_widget(form.username, {'attr': {'class' : 'form-control'}}) }}
+        </div>
+
+        <div class="form-group col-md-6">
+            {{ form_label(form.plainPassword, 'password', {'attr': {'class' : 'form-group col-md-6'}} ) }}
+            {{ form_widget(form.plainPassword, {'attr': {'class' : 'form-control'}}) }}
+        </div>
+
+
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary" value="{{ 'registration.submit'|trans }}">Sign in</button>
         </div>
     </div>
-</div>
 
-
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
-    </div>
 {{ form_end(form) }}
-
-
+</div>

@@ -1,0 +1,37 @@
+{% extends 'back.html.twig' %}
+{% block egg %}
+    <h1>Organisations list</h1>
+    <a href="{{ path('back_AddOrganiation') }}" >+++ajouter une organisation+++</a>
+    <table border="1"width="100%">
+        <thead>
+        <tr>
+            <th>Nomorganisation</th>
+            <th>Adresseorganisation</th>
+            <th>Telorganisation</th>
+            <th>Emailorganisation</th>
+            <th>Loginorganisation</th>
+            <th>Passwordorganisation</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for organisation in organisations %}
+            <tr>
+                <td>{{ organisation.nomOrganisation }}</td>
+                <td>{{ organisation.adresseOrganisation }}</td>
+                <td>{{ organisation.telOrganisation }}</td>
+                <td>{{ organisation.emailOrganisation }}</td>
+                <td>{{ organisation.loginOrganisation }}</td>
+                <td>{{ organisation.passwordOrganisation }}</td>
+                <td><a href="{{ path('back_EditOrganiation',{'id':organisation.id}) }}"> <img src="{{ asset ('back/img/ed.jpg') }}" width="30" height="30"> </a>
+                <a href="{{ path('back_DeleteOrganiation',{'id':organisation.id}) }}"><img src="{{ asset ('back/img/rm.jpg') }}" width="30" height="30"></a></td>
+
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

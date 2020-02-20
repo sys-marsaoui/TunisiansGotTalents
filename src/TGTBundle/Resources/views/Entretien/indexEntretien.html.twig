@@ -1,0 +1,53 @@
+{% extends 'profile.html.twig' %}
+
+
+    {% block name %}Entretiens list{% endblock %}
+
+{% block content %}
+    <div class="data-table-area mg-b-15">
+     <div class="container-fluid">
+      <div class="row">
+       <div class="col-lg-12">
+        <div class="sparkline13-list shadow-reset">
+         <div class="sparkline13-hd">
+           <div class="main-sparkline13-hd">
+            <div class="sparkline13-outline-icon">
+                <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                <span><i class="fa fa-wrench"></i></span>
+                <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+            </div>
+           </div>
+       </div>
+    <div class="sparkline13-graph">
+    <div class="datatable-dashv1-list custom-datatable-overright">
+        <table  id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+        <thead>
+        <tr>
+            <th data-field="id" data-editable="true">Id</th>
+            <th data-field="Dateent" data-editable="true">Dateent</th>
+            <th data-field="Statutent" data-editable="true">Statutent</th>
+            <th data-field="NNoteent" data-editable="true">Noteent</th>
+            <th data-field="Actions" data-editable="true" >Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entretien in entretiens %}
+            <tr>
+                <td><a href="{{ path('entretien_show', { 'id': entretien.id }) }}">{{ entretien.id }}</a></td>
+                <td>{{ entretien.dateEnt|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entretien.statutEnt }}</td>
+                <td>{{ entretien.noteEnt }}</td>
+                <td><a href="{{ path('entretien_delete', { 'id':entretien.id }) }}">suprimmer</a><a href="{{ path('entretien_edit', { 'id': entretien.id }) }}">editer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+          </div>
+    </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+
+{% endblock %}
